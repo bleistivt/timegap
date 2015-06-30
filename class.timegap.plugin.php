@@ -29,7 +29,6 @@ class TimeGapPlugin extends Gdn_Plugin {
                     ->firstRow();
             }
         }
-
         // Calculate the date difference.
         $date = new DateTime($args['Comment']->DateInserted);
         $gap = $date->diff(new DateTime($this->previous->DateInserted))->days;
