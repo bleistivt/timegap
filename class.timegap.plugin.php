@@ -34,7 +34,7 @@ class TimeGapPlugin extends Gdn_Plugin {
         $gap = $date->diff(new DateTime($this->previous->DateInserted))->days;
         $this->previous = $args['Comment'];
 
-        if ($gap < 6) {
+        if ($gap < c('TimeGap.MinDays', 7) - 1) {
             return;
         } if ($gap < 30) {
             $gap = sprintf(t('%s days later'), (int)$gap);
