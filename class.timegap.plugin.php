@@ -36,7 +36,7 @@ class TimeGapPlugin extends Gdn_Plugin {
 
         if ($gap < c('TimeGap.MinDays', 7) - 1) {
             return;
-        } if ($gap < 30) {
+        } elseif ($gap < 30) {
             $gap = sprintf(t('%s days later'), (int)$gap);
             $class = 'Days';
         } elseif ($gap < 60) {
