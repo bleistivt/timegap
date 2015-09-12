@@ -1,6 +1,6 @@
 <?php
 
-$PluginInfo['timegap'] = array(
+$PluginInfo['timegap'] = [
     'Name' => 'Time Gap',
     'Description' => 'Indicates long time gaps between posts.',
     'Version' => '0.1',
@@ -9,15 +9,17 @@ $PluginInfo['timegap'] = array(
     'Author' => 'Bleistivt',
     'AuthorUrl' => 'http://bleistivt.net',
     'License' => 'GNU GPL2'
-);
+];
 
 class TimeGapPlugin extends Gdn_Plugin {
 
     private $previous = false;
 
+
     public function assetModel_styleCss_handler($sender) {
         $sender->addCssFile('timegap.css', 'plugins/timegap');
     }
+
 
     public function discussionController_beforeCommentDisplay_handler($sender, $args) {
         // Find the previous comment.
@@ -29,6 +31,7 @@ class TimeGapPlugin extends Gdn_Plugin {
                     ->firstRow();
             }
         }
+
         // Calculate the date difference.
         $date = new DateTime($args['Comment']->DateInserted);
         $gap = $date->diff(new DateTime($this->previous->DateInserted))->days;
@@ -52,7 +55,12 @@ class TimeGapPlugin extends Gdn_Plugin {
             $gap = sprintf(t('%s years later'),  (int)($gap / 365));
             $class = 'Years';
         }
-        echo wrap(sprite('Time', 'InformSprite').$gap, 'li', array('class' => 'TimeGap '.$class));
+
+        echo wrap(
+            sprite('Time', 'InformSprite').$gap,
+            'li',
+            ['class' => 'TimeGap '.$class]
+        );
     }
 
 }
