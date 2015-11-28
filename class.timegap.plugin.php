@@ -56,11 +56,7 @@ class TimeGapPlugin extends Gdn_Plugin {
             $class = 'Years';
         }
 
-        echo wrap(
-            sprite('Time', 'InformSprite').$gap,
-            'li',
-            ['class' => 'TimeGap '.$class]
-        );
+        echo wrap($gap, 'li', ['class' => 'TimeGap '.$class]);
     }
 
 }
