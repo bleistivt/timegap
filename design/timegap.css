@@ -1,13 +1,6 @@
 .TimeGap {
-    padding: 12px 0 12px 45px;
+    padding: 1em 0;
     text-transform: uppercase;
-    border-bottom: 1px solid rgba(0, 0, 0, .2);
-    color: rgba(0, 0, 0, .5);
     opacity: .5;
     font-weight: bold;
-    position: relative;
-}
-
-.TimeGap .InformSprite {
-    top: 9px;
 }
