@@ -1,10 +1,11 @@
 {
     "name": "Time Gap",
     "description": "Indicates long time gaps between posts.",
-    "version": "0.1",
+    "version": "0.2",
     "hasLocale": true,
     "mobileFriendly": true,
     "license": "GNU GPL2",
+    "gitHub": "bleistivt/timegap",
     "key": "timegap",
     "type": "addon",
     "authors": [
