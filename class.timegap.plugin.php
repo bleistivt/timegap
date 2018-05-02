@@ -1,16 +1,5 @@
 <?php
 
-$PluginInfo['timegap'] = [
-    'Name' => 'Time Gap',
-    'Description' => 'Indicates long time gaps between posts.',
-    'Version' => '0.1',
-    'HasLocale' => true,
-    'MobileFriendly' => true,
-    'Author' => 'Bleistivt',
-    'AuthorUrl' => 'http://bleistivt.net',
-    'License' => 'GNU GPL2'
-];
-
 class TimeGapPlugin extends Gdn_Plugin {
 
     private $previous = false;
